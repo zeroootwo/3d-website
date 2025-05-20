@@ -1,0 +1,12 @@
+
+services:
+  web:
+    image: nginx:alpine
+    container_name: my_3d_site_https
+    ports:
+      - "443:443"
+    volumes:
+      - ./:/usr/share/nginx/html
+      - ./nginx.conf:/etc/nginx/nginx.conf
+      - ./certs:/etc/nginx/certs
+    restart: unless-stopped

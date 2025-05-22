@@ -10,14 +10,37 @@ body {
     line-height: 1.6;
     color: var(--light);
     background-color: #6c70ddc7;
-    background-image: url('images/bg-texture.jpg');
-    background-attachment: fixed;
-    background-size: cover;
     margin: 0;
     padding: 0;
+    position: relative;
+    overflow-x: hidden;
 }
 
-/* Анімації */
+.bg-video {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    z-index: -1;
+    filter: brightness(0.7); /* Затемнення для читабельності тексту */
+}
+
+/* Стилі для зображень у секціях */
+.section-image {
+    display: block;
+    width: 100%; /* Зображення завжди займає ширину контейнера */
+    max-width: 100%; /* Для безпеки */
+    height: auto; /* Зберігає пропорції */
+    margin: 1rem auto;
+    border-radius: 8px;
+    filter: brightness(0.9);
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+    object-fit: contain; /* Зображення не обрізається, підлаштовується */
+}
+
+/* Анітації */
 @keyframes fadeIn {
     from { opacity: 0; }
     to { opacity: 1; }
@@ -26,6 +49,23 @@ body {
 @keyframes slideUp {
     from { transform: translateY(50px); opacity: 0; }
     to { transform: translateY(0); opacity: 1; }
+}
+
+@keyframes pulse {
+    0% { transform: scale(1); }
+    50% { transform: scale(1.1); }
+    100% { transform: scale(1); }
+}
+
+@keyframes dropdownSlide {
+    from { opacity: 0; transform: translateY(-10px); }
+    to { opacity: 1; transform: translateY(0); }
+}
+
+@keyframes glow {
+    0% { box-shadow: 0 0 5px var(--primary); }
+    50% { box-shadow: 0 0 15px var(--primary); }
+    100% { box-shadow: 0 0 5px var(--primary); }
 }
 
 .fade-in {
@@ -44,26 +84,36 @@ header {
     background: linear-gradient(135deg, var(--primary), var(--dark));
 }
 
-nav {
+.nav-bar {
     display: flex;
     justify-content: center;
-    background: var(--dark);
+    align-items: center;
+    background: linear-gradient(135deg, rgba(69, 42, 85, 0.9), rgba(133, 52, 219, 0.7));
     padding: 1rem;
     position: sticky;
     top: 0;
     z-index: 100;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
+    width: 100%;
+    left: 0;
+    right: 0;
 }
 
-nav a {
-    color: white;
+.nav-link {
+    color: var(--light);
     text-decoration: none;
-    margin: 0 1rem;
-    padding: 0.5rem;
-    transition: all 0.3s;
+    padding: 0.8rem 1.2rem;
+    margin: 0 0.5rem;
+    font-size: 1.1rem;
+    transition: all 0.3s ease;
+    border-radius: 4px;
 }
 
-nav a:hover {
-    color: var(--primary);
+.nav-link:hover {
+    color: #fff;
+    background: var(--primary);
+    transform: scale(1.05);
+    box-shadow: 0 0 10px rgba(133, 52, 219, 0.5);
 }
 
 .card {
@@ -127,74 +177,184 @@ footer {
     text-decoration: none;
 }
 
-/* Медіазапити */
-@media (max-width: 768px) {
-    nav {
-        flex-direction: column;
-        align-items: center;
-    }
-}
-/* Додайте ці стилі до вашого існуючого CSS */
-
 /* Стилі для випадаючих списків */
 .dropdown {
     position: relative;
     display: inline-block;
+    margin: 0 0.5rem;
 }
 
 .dropbtn {
-    background-color: #452c50;
-    color: white;
-    padding: 12px 20px;
+    background: linear-gradient(135deg, #752bb6, #452c50);
+    color: var(--light);
+    padding: 0.8rem 1.5rem;
     border: none;
     cursor: pointer;
-    font-size: 16px;
-    transition: all 0.3s;
+    font-size: 1.1rem;
+    border-radius: 4px;
+    transition: all 0.3s ease;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
 }
 
 .dropbtn:hover {
-    background-color: #752bb6;
+    background: linear-gradient(135deg, #8929b9, #752bb6);
+    transform: scale(1.05);
+    animation: glow 1.5s ease-in-out infinite;
 }
 
 .dropdown-content {
     display: none;
     position: absolute;
-    background-color: #752bb6;
+    background: linear-gradient(135deg, rgba(117, 43, 182, 0.95), rgba(69, 44, 80, 0.9));
     min-width: 200px;
-    box-shadow: 0 8px 16px rgba(0,0,0,0.2);
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.3);
     z-index: 1;
-    opacity: 0;
+    border-radius: 8px;
+    overflow: hidden;
     transform: translateY(-10px);
     transition: all 0.3s ease;
 }
 
 .dropdown-content a {
-    color: #ffffff;
+    color: var(--light);
     padding: 12px 16px;
     text-decoration: none;
     display: block;
-    transition: background-color 0.3s;
+    font-size: 1rem;
+    transition: all 0.3s ease;
 }
 
 .dropdown-content a:hover {
-    background-color: #ddd;
+    background: var(--primary);
+    color: #fff;
+    transform: translateX(5px);
 }
 
 .dropdown:hover .dropdown-content {
     display: block;
-    opacity: 1;
-    transform: translateY(0);
+    animation: dropdownSlide 0.3s ease-out forwards;
 }
 
-/* Анімація для випадаючого меню */
-@keyframes fadeInDropdown {
-    from { opacity: 0; transform: translateY(-10px); }
-    to { opacity: 1; transform: translateY(0); }
+/* Медіазапити */
+@media (max-width: 768px) {
+    .nav-bar {
+        flex-direction: column;
+        padding: 0.5rem;
+        width: 100%;
+        left: 0;
+        right: 0;
+    }
+
+    .nav-link, .dropdown {
+        margin: 0.3rem 0;
+        width: 100%;
+        text-align: center;
+    }
+
+    .nav-link {
+        padding: 1rem;
+        font-size: 1.2rem;
+    }
+
+    .dropbtn {
+        width: 100%;
+        padding: 1rem;
+        font-size: 1.2rem;
+    }
+
+    .dropdown-content {
+        position: relative;
+        width: 100%;
+        border-radius: 0;
+    }
+
+    .section-image {
+        width: 90%; /* Ще більше обмежуємо на мобільних */
+        max-width: 90%;
+    }
 }
 
-.dropdown:hover .dropdown-content {
-    animation: fadeInDropdown 0.3s ease-out;
+/* Нові стилі для сторінки "Що таке 3D-моделювання?" */
+.full-screen-header {
+    height: 100vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    padding: 2rem;
+    color: white;
+    background: linear-gradient(135deg, var(--primary), var(--dark));
+    position: relative;
+    overflow: hidden;
 }
+
+.full-screen-header h1 {
+    font-size: 4rem;
+    text-shadow: 0 0 10px var(--light);
+    margin-bottom: 1rem;
+}
+
+.header-subtitle {
+    font-size: 1.8rem;
+    max-width: 600px;
+}
+
+.content-flow {
+    max-width: 900px;
+    margin: 3rem auto;
+    padding: 2rem;
+}
+
+.flow-section {
+    margin-bottom: 3rem;
+    background: rgba(41, 46, 188, 0.3);
+    padding: 2rem;
+    border-radius: 8px;
+    overflow: hidden; /* Запобігаємо виходу зображень за межі */
+}
+
+.flow-title {
+    font-size: 2.5rem;
+    text-align: center;
+    text-shadow: 0 0 6px var(--primary);
+    margin-bottom: 1.5rem;
+}
+
+.flow-divider {
+    width: 60%;
+    height: 3px;
+    background: linear-gradient(to right, var(--primary), transparent);
+    margin: 1rem auto;
+    animation: shine 4s ease-in-out infinite;
+}
+
+.flow-section p {
+    font-size: 1.2rem;
+    line-height: 1.9;
+    margin: 1.5rem 0;
+    text-align: justify;
+}
+
+.highlight {
+    color: var(--primary);
+    text-shadow: 0 0 5px var(--light);
+}
+
+.accent {
+    color: #b880ff;
+    font-weight: 600;
+}
+
+.bold {
+    font-weight: 700;
+}
+
+.italic {
+    font-style: italic;
+    color: #d4b0ff;
+}
+
 .next-btn {
     display: inline-block;
     margin-top: 2rem;
@@ -204,12 +364,14 @@ footer {
     text-decoration: none;
     border-radius: 4px;
     transition: all 0.3s;
+    animation: pulse 2s ease-in-out infinite;
 }
 
 .next-btn:hover {
-    background-color: #8929b9;
+    background-color: #752bb6;
     transform: translateX(5px);
 }
+
 /* Анімований прямокутник */
 .animated-box {
     background: linear-gradient(135deg, #3439db, #2c3e50);
@@ -252,7 +414,7 @@ footer {
     position: relative;
 }
 
-/* Анімації для прямокутника */
+/* Анітації для прямокутника */
 @keyframes floatBox {
     0%, 100% { transform: translateY(0) rotate(0.5deg); }
     50% { transform: translateY(-10px) rotate(-0.5deg); }
@@ -261,4 +423,47 @@ footer {
 @keyframes shine {
     0% { left: -50%; top: -50%; }
     100% { left: 150%; top: 150%; }
+}
+
+@media (max-width: 768px) {
+    .full-screen-header h1 {
+        font-size: 2.5rem;
+    }
+
+    .header-subtitle {
+        font-size: 1.2rem;
+    }
+
+    .flow-title {
+        font-size: 2rem;
+    }
+
+    .flow-section p {
+        font-size: 1rem;
+    }
+
+    .flow-divider {
+        width: 80%;
+    }
+}
+
+/* Стилі для відео (iframe) */
+.video-container {
+    position: relative;
+    padding-bottom: 56.25%; /* 16:9 пропорції */
+    height: 0;
+    overflow: hidden;
+    margin: 1rem auto;
+    max-width: 100%;
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+}
+
+.video-container iframe {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    border: none;
 }

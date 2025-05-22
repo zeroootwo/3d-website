@@ -3,17 +3,23 @@
     <head>
         <meta charset="UTF-8">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
-        <title>3D Моделювання - Головна</title>
+        <title>Головна</title>
         <link rel="stylesheet" href="css/style.css">
+        <link rel="icon" type="image/png" href="images/blender-16x16.png" sizes="16x16">
+        <link rel="icon" type="image/png" href="images/blender-32x32.png" sizes="32x32">
+        <link rel="icon" type="image/png" href="images/blender-64x64.png" sizes="64x64">
     </head>
     <body>
-        <header class="fade-in">
+        <video autoplay muted loop class="bg-video">
+            <source src="images/donut&cup_of_coffee.mov" type="video/quicktime">
+        </video>
+        <header class="full-screen-header fade-in">
             <h1>Тривимірне моделювання</h1>
+            <p class="header-subtitle">Відкрий мистецтво створення <span class="highlight">тривимірних світів</span>!</p>
+            <a href="#content" class="next-btn">Поринь у 3D</a>
         </header>
-        <nav>
-            <div class="dropdown">
-                <button class="dropbtn">Головна</button>
-            </div>
+        <nav class="nav-bar">
+            <a href="index.html" class="nav-link">Головна</a>
             <div class="dropdown">
                 <button class="dropbtn">Теорія</button>
                 <div class="dropdown-content">
@@ -31,12 +37,15 @@
             </div>
             <div class="dropdown">
                 <button class="dropbtn">Програми</button>
+                <div class="dropdown-content">
+                    <a href="html/best-choise.html">Яке саме ПЗ обрати?</a>
+                    <a href="html/blender.html">Blender</a>
+                    <a href="html/maya.html">Maya</a>
+                </div>
             </div>
-            <div class="dropdown">
-                <button class="dropbtn">Контакти</button>
-            </div>
+            <a href="html/my-work.html" class="nav-link">Мої роботи ❤️</a>
         </nav>
-        <main>
+        <main class="content-flow" id="content">
             <div class="animated-box slide-up">
                 <h2>Ласкаво просимо до світу 3D!</h2>
                 <p style="text-align:justify;">Тривимірне моделювання — це захоплюючий процес створення цифрових об’єктів, які оживають у відеоіграх, фільмах, архітектурних проєктах чи навіть на 3D-принтерах. Незалежно від того, чи ви новачок, який мріє створити свою першу модель, чи досвідчений дизайнер, наш сайт допоможе вам опанувати мистецтво 3D.</p>
@@ -44,24 +53,24 @@
             </div>
             <div class="grid">
                 <div class="card">
-                    <h3>Новичкам</h3>
-                    <p>Початок роботи з 3D за 5 кроків</p>
-                    <p>👉 <a href="media/tutorials.html" style="color: #f1c40f;">Дивіться огляд нових функцій</a></p>
+                    <h2>Мої 3D-досягнення в Blender</h2>
+                    <p style="text-align:justify;">Пориньте у світ моїх творінь! Від простих моделей до складних сцен для ігор і анімацій — я створюю 3D-шедеври в Blender. Мої роботи — це результат пристрасті, експериментів і безлічі годин навчання. Хочете побачити, що можна створити з нуля? Перегляньте моє портфоліо та надихайтеся для власних проєктів!</p>
+                    <p>👉 <a href="html/my-work.html" style="color: #f1c40f;">Переглянути портфоліо</a>❤️</p>
                 </div>
                 <div class="card">
-                    <h3>Відеоуроки</h3>
-                    <p>Топ-5 безкоштовних курсів</p>
-                    <p>👉 <a href="media/tutorials.html" style="color: #f1c40f;">Дивіться огляд нових функцій</a></p>
+                    <h2>Відеоуроки</h2>
+                    <p style="text-align:justify;">Пориньте у світ 3D-моделювання з нашою добіркою найкращих відеоуроків із YouTube! Досвідчені автори покажуть, як створювати моделі, текстури та анімації в популярних програмах, таких як Blender і Maya. Незалежно від того, чи хочете ви створити персонажа для гри, об’єкт для 3D-друку чи архітектурну візуалізацію, ці уроки допоможуть вам зробити перші кроки та вдосконалити навички. Почніть навчання вже сьогодні!</p>
+                    <p>👉 <a href="html/tutorials.html" style="color: #f1c40f;">Топ-3 безкоштовних курсів</a></p>
                 </div>
             </div>
         </main>
-        <footer id="contacts" class="fade-in">
-            <h2>Контакти</h2>
+        <footer>
             <div class="social">
                 <p>Сайт створений Великою А.В.</p>
                 <a href="https://t.me/crockyyy"><img src="images/telegram-svgrepo-com-3.svg" alt="Иконка" class="vector-icon" width="16" height="16">   @crockyyy</a>
             </div>
             <p>© 3D Моделювання 2025. Усі права захищені.</p>
         </footer>
+        <script src="js/script.js"></script>
     </body>
 </html>

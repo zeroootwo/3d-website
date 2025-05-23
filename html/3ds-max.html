@@ -1,0 +1,264 @@
+<!DOCTYPE html>
+<html lang="uk">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Програми</title>
+        <link rel="stylesheet" href="../css/style.css">
+        <link rel="icon" type="image/png" href="../images/blender-16x16.png" sizes="16x16">
+        <link rel="icon" type="image/png" href="../images/blender-32x32.png" sizes="32x32">
+        <link rel="icon" type="image/png" href="../images/blender-64x64.png" sizes="64x64">
+    </head>
+    <body>
+        <header class="full-screen-header fade-in">
+            <h1>3ds Max</h1>
+            <p class="header-subtitle">Відкрий мистецтво створення <span class="highlight">тривимірних світів</span>!</p>
+            <a href="#content" class="next-btn">Поринь у 3D</a>
+        </header>
+        <nav class="nav-bar">
+            <a href="../index.html" class="nav-link">Головна</a>
+            <div class="dropdown">
+                <button class="dropbtn">Теорія</button>
+                <div class="dropdown-content">
+                    <a href="../html/what-is-3d.html">Що таке 3D-моделювання</a>
+                    <a href="../html/basics.html">Основні поняття</a>
+                    <a href="../html/modeling-types.html">Види моделювання</a>
+                </div>
+            </div>
+            <div class="dropdown">
+                <button class="dropbtn">Мультимедіа</button>
+                <div class="dropdown-content">
+                    <a href="../html/tutorials.html">Відеоуроки</a>
+                    <a href="../html/guides.html">Покрокові гайди</a>
+                </div>
+            </div>
+            <div class="dropdown">
+                <button class="dropbtn">Програми</button>
+                <div class="dropdown-content">
+                    <a href="../html/best-choise.html">Яке саме ПЗ обрати?</a>
+                    <a href="../html/blender.html">Blender</a>
+                    <a href="../html/maya.html">Maya</a>
+                    <a href="../html/3ds-max.html">3ds Max</a>
+                    <a href="../html/cinema-4d.html">Cinema 4D</a>
+                    <a href="../html/zbrush.html">ZBrush</a>
+                </div>
+            </div>
+            <a href="../html/my-work.html" class="nav-link">Мої роботи ❤️</a>
+        </nav>
+    <main class="content-flow" id="content">
+        <!-- Основна секція -->
+        <section class="flow-section slide-up">
+            <h2 class="flow-title">Чому <span class="highlight">3ds Max</span>?</h2>
+            <div class="flow-divider"></div>
+            <p><span class="accent">Autodesk 3ds Max</span> — це потужний інструмент, який використовують провідні студії світу для створення:</p>
+            
+            <div class="grid" style="margin-top: 2rem;">
+                <div class="card">
+                    <h3>Архітектурні візуалізації</h3>
+                    <p>Створення фотореалістичних інтер'єрів та екстер'єрів з <span class="bold">V-Ray</span> та <span class="bold">Corona Renderer</span>.</p>
+                    <img src="../images/arch-viz.jpg" alt="Архітектурна візуалізація" class="section-image">
+                </div>
+                <div class="card">
+                    <h3>Ігрові активи</h3>
+                    <p>Моделювання персонажів, зброї та середовищ для AAA-ігор.</p>
+                    <img src="../images/game-assets.jpg" alt="Ігрові активи" class="section-image">
+                </div>
+            </div>
+        </section>
+
+        <!-- Детальні можливості -->
+        <section class="flow-section slide-up">
+            <h2 class="flow-title">Розширені <span class="highlight">можливості</span></h2>
+            <div class="flow-divider"></div>
+            
+            <h3 style="color: #b880ff;">Моделювання</h3>
+            <ul>
+                <li><span class="bold">Polygon Modeling</span> - інтуїтивні інструменти для роботи з полігонами</li>
+                <li><span class="bold">Spline Modeling</span> - створення складних кривих</li>
+                <li><span class="bold">ProBoolean</span> - логічні операції з об'єктами</li>
+            </ul>
+
+            <h3 style="color: #b880ff; margin-top: 1.5rem;">Анімація</h3>
+            <div class="video-container">
+                <iframe src="https://www.youtube.com/embed/dQw4w9WgXcQ" frameborder="0" allowfullscreen></iframe>
+            </div>
+        </section>
+
+        <!-- Порівняння з іншими програмами -->
+        <section class="flow-section slide-up">
+            <h2 class="flow-title">Повне порівняння <span class="highlight">3D-програм</span></h2>
+            <div class="flow-divider"></div>
+            
+            <div class="comparison-container glow-on-hover">
+                <!-- Фільтри -->
+                <div class="comparison-filters">
+                    <button class="filter-btn active" data-filter="all">Усі категорії</button>
+                    <button class="filter-btn" data-filter="modeling">Моделювання</button>
+                    <button class="filter-btn" data-filter="rendering">Рендеринг</button>
+                    <button class="filter-btn" data-filter="animation">Анімація</button>
+                </div>
+
+                <!-- Таблиця -->
+                <div class="comparison-table-wrapper">
+                    <table class="comparison-table">
+                        <thead>
+                            <tr>
+                                <th class="table-header">Характеристика</th>
+                                <th class="table-header">
+                                    <img src="../images/3ds-max-icon.png" alt="3ds Max" class="software-logo">
+                                    <span>3ds Max</span>
+                                </th>
+                                <th class="table-header">
+                                    <img src="../images/maya-icon.png" alt="Maya" class="software-logo">
+                                    <span>Maya</span>
+                                </th>
+                                <th class="table-header">
+                                    <img src="../images/c4d-icon.png" alt="Cinema 4D" class="software-logo">
+                                    <span>Cinema 4D</span>
+                                </th>
+                                <th class="table-header">
+                                    <img src="../images/blender-icon.png" alt="Blender" class="software-logo">
+                                    <span>Blender</span>
+                                </th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <!-- Моделювання -->
+                            <tr class="comparison-row modeling">
+                                <td class="feature-name">Полігональне моделювання</td>
+                                <td class="rating excellent">⭐⭐⭐⭐⭐</td>
+                                <td class="rating great">⭐⭐⭐⭐</td>
+                                <td class="rating good">⭐⭐⭐</td>
+                                <td class="rating great">⭐⭐⭐⭐</td>
+                            </tr>
+                            <tr class="comparison-row modeling">
+                                <td class="feature-name">Скульптинг</td>
+                                <td class="rating poor">⭐</td>
+                                <td class="rating good">⭐⭐⭐</td>
+                                <td class="rating poor">⭐</td>
+                                <td class="rating excellent">⭐⭐⭐⭐⭐</td>
+                            </tr>
+                            <tr class="comparison-row modeling">
+                                <td class="feature-name">NURBS</td>
+                                <td class="rating great">⭐⭐⭐⭐</td>
+                                <td class="rating excellent">⭐⭐⭐⭐⭐</td>
+                                <td class="rating good">⭐⭐⭐</td>
+                                <td class="rating poor">⭐</td>
+                            </tr>
+
+                            <!-- Рендеринг -->
+                            <tr class="comparison-row rendering">
+                                <td class="feature-name">Швидкість рендерингу</td>
+                                <td class="rating great">Arnold/V-Ray</td>
+                                <td class="rating excellent">Arnold</td>
+                                <td class="rating great">Octane</td>
+                                <td class="rating good">Cycles</td>
+                            </tr>
+                            <tr class="comparison-row rendering">
+                                <td class="feature-name">Реалізм</td>
+                                <td class="rating excellent">⭐⭐⭐⭐⭐</td>
+                                <td class="rating excellent">⭐⭐⭐⭐⭐</td>
+                                <td class="rating great">⭐⭐⭐⭐</td>
+                                <td class="rating great">⭐⭐⭐⭐</td>
+                            </tr>
+
+                            <!-- Анімація -->
+                            <tr class="comparison-row animation">
+                                <td class="feature-name">Персонажна анімація</td>
+                                <td class="rating great">⭐⭐⭐⭐</td>
+                                <td class="rating excellent">⭐⭐⭐⭐⭐</td>
+                                <td class="rating good">⭐⭐⭐</td>
+                                <td class="rating great">⭐⭐⭐⭐</td>
+                            </tr>
+                            <tr class="comparison-row animation">
+                                <td class="feature-name">Ригінґ</td>
+                                <td class="rating good">⭐⭐⭐</td>
+                                <td class="rating excellent">⭐⭐⭐⭐⭐</td>
+                                <td class="rating good">⭐⭐⭐</td>
+                                <td class="rating great">⭐⭐⭐⭐</td>
+                            </tr>
+
+                            <!-- Інше -->
+                            <tr class="comparison-row">
+                                <td class="feature-name">Ціна (річна)</td>
+                                <td>$1,700</td>
+                                <td>$1,700</td>
+                                <td>$719</td>
+                                <td class="highlight">Безкоштовно</td>
+                            </tr>
+                            <tr class="comparison-row">
+                                <td class="feature-name">Складність</td>
+                                <td>Висока</td>
+                                <td>Дуже висока</td>
+                                <td>Середня</td>
+                                <td>Висока</td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+
+                <!-- Легенда -->
+                <div class="comparison-legend">
+                    <div class="legend-item">
+                        <span class="legend-icon excellent"></span>
+                        <span>Відмінно (5/5)</span>
+                    </div>
+                    <div class="legend-item">
+                        <span class="legend-icon great"></span>
+                        <span>Добре (4/5)</span>
+                    </div>
+                    <div class="legend-item">
+                        <span class="legend-icon good"></span>
+                        <span>Задовільно (3/5)</span>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Висновки -->
+            <div class="comparison-conclusions">
+                <div class="conclusion-card" style="--accent: #8534db;">
+                    <h3><i class="fas fa-city"></i> 3ds Max</h3>
+                    <p>Кращий вибір для архітекторів та дизайнерів інтер'єрів</p>
+                </div>
+                <div class="conclusion-card" style="--accent: #00b894;">
+                    <h3><i class="fas fa-film"></i> Maya</h3>
+                    <p>Стандарт для кіноіндустрії та складних анімацій</p>
+                </div>
+                <div class="conclusion-card" style="--accent: #0984e3;">
+                    <h3><i class="fas fa-ad"></i> Cinema 4D</h3>
+                    <p>Ідеальний для моушн-дизайну та реклами</p>
+                </div>
+                <div class="conclusion-card" style="--accent: #fdcb6e;">
+                    <h3><i class="fas fa-heart"></i> Blender</h3>
+                    <p>Потужний безкоштовний інструмент для всіх задач</p>
+                </div>
+            </div>
+        </section>
+
+        <!-- Практичні приклади -->
+        <section class="flow-section slide-up">
+            <h2 class="flow-title">Реальні <span class="highlight">проекти</span></h2>
+            <div class="flow-divider"></div>
+            
+            <div class="grid">
+                <div class="card">
+                    <h3>Кіноіндустрія</h3>
+                    <p>Використовувався для візуальних ефектів у <span class="bold">"Гра престолів"</span> та <span class="bold">"Месники"</span>.</p>
+                </div>
+                <div class="card">
+                    <h3>Ігрова індустрія</h3>
+                    <p>Основний інструмент для <span class="bold">Call of Duty</span> та <span class="bold">Assassin's Creed</span>.</p>
+                </div>
+            </div>
+        </section>
+    </main>
+        <footer>
+            <div class="social">
+                <p>Сайт створений Великою А.В.</p>
+                <a href="https://t.me/crockyyy"><img src="../images/telegram-svgrepo-com-3.svg" alt="Telegram" class="vector-icon" width="16" height="16">   @crockyyy</a>
+            </div>
+            <p>© 3D Моделювання 2025. Усі права захищені.</p>
+        </footer>
+        <script src="../js/script.js"></script>
+    </body>
+</html>

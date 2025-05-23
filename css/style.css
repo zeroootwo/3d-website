@@ -40,7 +40,7 @@ body {
     object-fit: contain; /* Зображення не обрізається, підлаштовується */
 }
 
-/* Анітації */
+/* Анімації */
 @keyframes fadeIn {
     from { opacity: 0; }
     to { opacity: 1; }
@@ -117,7 +117,7 @@ header {
 }
 
 .card {
-    background: rgba(41, 46, 188, 0.9);
+    background: rgba(105, 41, 188, 0.9);
     border-radius: 8px;
     padding: 1.5rem;
     margin: 1rem 0;
@@ -129,11 +129,45 @@ header {
     transform: translateY(-5px);
 }
 
-.video-container {
-    position: relative;
-    padding-bottom: 56.25%; /* 16:9 */
-    height: 0;
-    overflow: hidden;
+.full-width-card {
+    width: 100%;
+    background: rgba(105, 41, 188, 0.9); /* Фон як у .card */
+    border-radius: 8px;
+    padding: 1.5rem;
+    margin: 1rem 0;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    box-sizing: border-box;
+    text-align: justify;
+    transition: transform 0.3s;
+}
+
+.full-width-card:hover {
+    transform: translateY(-5px);
+}
+
+.full-width-card h3 {
+    margin-top: 0;
+    color: var(--light);
+    font-size: 1.5em;
+}
+
+.full-width-card p {
+    margin: 0;
+    color: var(--light);
+    font-size: 1em;
+    text-align: justify;
+}
+
+.full-width-card .bold {
+    color: var(--light);
+}
+
+.full-width-card .highlight {
+    color: var(--primary);
+}
+
+.full-width-card .italic {
+    color: #d4b0ff;
 }
 
 .video-container video {
@@ -269,7 +303,7 @@ footer {
     }
 
     .section-image {
-        width: 90%; /* Ще більше обмежуємо на мобільних */
+        width: 90%;
         max-width: 90%;
     }
 }
@@ -311,7 +345,7 @@ footer {
     background: rgba(41, 46, 188, 0.3);
     padding: 2rem;
     border-radius: 8px;
-    overflow: hidden; /* Запобігаємо виходу зображень за межі */
+    /* Видаляємо max-height і overflow-y для уникнення скролу */
 }
 
 .flow-title {
@@ -374,7 +408,7 @@ footer {
 
 /* Анімований прямокутник */
 .animated-box {
-    background: linear-gradient(135deg, #3439db, #2c3e50);
+    background: linear-gradient(135deg, #7134db, #3d2c50);
     color: white;
     padding: 2rem;
     border-radius: 10px;
@@ -414,7 +448,7 @@ footer {
     position: relative;
 }
 
-/* Анітації для прямокутника */
+/* Анімації для прямокутника */
 @keyframes floatBox {
     0%, 100% { transform: translateY(0) rotate(0.5deg); }
     50% { transform: translateY(-10px) rotate(-0.5deg); }
@@ -450,7 +484,7 @@ footer {
 /* Стилі для відео (iframe) */
 .video-container {
     position: relative;
-    padding-bottom: 56.25%; /* 16:9 пропорції */
+    padding-bottom: 56.25%;
     height: 0;
     overflow: hidden;
     margin: 1rem auto;
@@ -466,4 +500,316 @@ footer {
     width: 100%;
     height: 100%;
     border: none;
+}
+
+/* Контейнер */
+.comparison-container {
+    background: rgba(41, 46, 188, 0.2);
+    border-radius: 12px;
+    padding: 2rem;
+    margin: 2rem 0;
+    backdrop-filter: blur(10px);
+    border: 1px solid rgba(133, 52, 219, 0.3);
+    transition: all 0.3s;
+}
+
+.glow-on-hover:hover {
+    box-shadow: 0 0 15px rgba(133, 52, 219, 0.4);
+}
+
+/* Фільтри */
+.comparison-filters {
+    display: flex;
+    gap: 0.8rem;
+    margin-bottom: 1.5rem;
+    flex-wrap: wrap;
+}
+
+.filter-btn {
+    background: rgba(69, 42, 85, 0.5);
+    border: none;
+    color: var(--light);
+    padding: 0.6rem 1.2rem;
+    border-radius: 20px;
+    cursor: pointer;
+    transition: all 0.3s;
+    font-size: 0.9rem;
+}
+
+.filter-btn.active {
+    background: var(--primary);
+    box-shadow: 0 0 10px rgba(133, 52, 219, 0.5);
+}
+
+/* Таблиця */
+.comparison-table-wrapper {
+    overflow-x: auto;
+    margin: 1rem 0;
+}
+
+.comparison-table {
+    width: 100%;
+    border-collapse: separate;
+    border-spacing: 0;
+    min-width: 800px;
+}
+
+.table-header {
+    background: linear-gradient(135deg, var(--primary), var(--dark));
+    color: white;
+    padding: 1rem;
+    text-align: center;
+    position: sticky;
+    top: 0;
+    z-index: 10;
+}
+
+.comparison-row td {
+    padding: 1rem;
+    background: rgba(41, 46, 188, 0.1);
+    border-bottom: 1px solid rgba(133, 52, 219, 0.2);
+    transition: all 0.2s;
+}
+
+.comparison-row:hover td {
+    background: rgba(133, 52, 219, 0.2);
+}
+
+.feature-name {
+    font-weight: 600;
+    color: #b880ff;
+    white-space: nowrap;
+}
+
+/* Рейтинги */
+.rating {
+    text-align: center;
+    font-weight: bold;
+}
+
+.excellent { color: #2ecc71; }
+.great { color: #f1c40f; }
+.good { color: #e67e22; }
+.poor { color: #e74c3c; }
+
+/* Іконки */
+.software-logo {
+    width: 30px;
+    height: 30px;
+    display: block;
+    margin: 0 auto 0.5rem;
+    filter: drop-shadow(0 0 5px rgba(255, 255, 255, 0.3));
+}
+
+/* Легенда */
+.comparison-legend {
+    display: flex;
+    gap: 1.5rem;
+    justify-content: center;
+    margin-top: 1.5rem;
+    flex-wrap: wrap;
+}
+
+.legend-item {
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+}
+
+.legend-icon {
+    width: 16px;
+    height: 16px;
+    border-radius: 50%;
+    display: inline-block;
+}
+
+.legend-icon.excellent { background: #2ecc71; }
+.legend-icon.great { background: #f1c40f; }
+.legend-icon.good { background: #e67e22; }
+
+/* Висновки */
+.comparison-conclusions {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 1.5rem;
+    margin-top: 2rem;
+}
+
+.conclusion-card {
+    background: rgba(41, 46, 188, 0.2);
+    border-left: 4px solid var(--accent);
+    padding: 1.2rem;
+    border-radius: 0 8px 8px 0;
+    transition: transform 0.3s;
+}
+
+.conclusion-card:hover {
+    transform: translateY(-5px);
+}
+
+.conclusion-card h3 {
+    color: var(--accent);
+    margin-top: 0;
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+}
+
+/* Анімації */
+@keyframes fadeIn {
+    from { opacity: 0; transform: translateY(10px); }
+    to { opacity: 1; transform: translateY(0); }
+}
+
+.comparison-row {
+    animation: fadeIn 0.5s ease-out;
+    animation-fill-mode: both;
+}
+
+.comparison-row:nth-child(1) { animation-delay: 0.1s; }
+.comparison-row:nth-child(2) { animation-delay: 0.2s; }
+
+/* Стилі для сторінки "Мої роботи" */
+.pdf-container {
+    width: 100%;
+    height: auto; /* Видаляємо фіксовану висоту для уникнення скролу */
+    margin: 2rem auto;
+    border: 2px solid var(--primary);
+    border-radius: 10px;
+    overflow: hidden;
+    box-shadow: 0 10px 30px rgba(133, 52, 219, 0.4);
+    background: white;
+}
+
+.pdf-container embed {
+    width: 100%;
+    height: auto; /* Адаптуємо до вмісту */
+    min-height: 600px; /* Мінімальна висота для видимості */
+    border: none;
+}
+
+.media-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 2rem;
+    margin: 3rem 0;
+}
+
+.media-item {
+    position: relative;
+    border-radius: 12px;
+    overflow: hidden;
+    box-shadow: 0 8px 25px rgba(0, 0, 0, 0.2);
+    transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+    background: rgba(41, 46, 188, 0.3);
+    border: 1px solid rgba(133, 52, 219, 0.4);
+}
+
+.media-item:hover {
+    transform: translateY(-10px) scale(1.03);
+    box-shadow: 0 15px 35px rgba(133, 52, 219, 0.5);
+}
+
+.media-item img {
+    width: 100%;
+    height: auto;
+    display: block;
+    border-radius: 10px 10px 0 0;
+}
+
+.media-item .media-caption {
+    padding: 1.5rem;
+    background: rgba(69, 42, 85, 0.7);
+}
+
+.media-item .media-caption h3 {
+    margin-top: 0;
+    color: var(--light);
+}
+
+.video-wrapper {
+    position: relative;
+    padding-bottom: 56.25%; /* 16:9 aspect ratio */
+    height: 0;
+    overflow: hidden;
+}
+
+.video-wrapper video {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+/* Анімації */
+@keyframes mediaAppear {
+    from {
+        opacity: 0;
+        transform: translateY(50px) rotate(2deg);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0) rotate(0);
+    }
+}
+
+.flow-section {
+    animation: mediaAppear 0.8s ease-out forwards;
+    opacity: 0;
+}
+
+.flow-section:nth-child(1) { animation-delay: 0.1s; }
+.flow-section:nth-child(2) { animation-delay: 0.3s; }
+.flow-section:nth-child(3) { animation-delay: 0.5s; }
+.flow-section:nth-child(4) { animation-delay: 0.7s; }
+.flow-section:nth-child(5) { animation-delay: 0.9s; }
+.flow-section:nth-child(6) { animation-delay: 1.1s; }
+
+/* Адаптивність */
+@media (max-width: 1024px) {
+    .pdf-container {
+        height: auto; /* Видаляємо фіксовану висоту */
+    }
+}
+
+@media (max-width: 768px) {
+    .pdf-container {
+        height: auto; /* Видаляємо фіксовану висоту */
+    }
+    
+    .media-grid {
+        grid-template-columns: 1fr;
+    }
+}
+
+@media (max-width: 480px) {
+    .pdf-container {
+        height: auto; /* Видаляємо фіксовану висоту */
+        border-width: 1px;
+    }
+    
+    .media-item {
+        border-radius: 8px;
+    }
+}
+
+
+.content-wrapper {
+    padding: 10px;
+}
+
+.video-container, .section-image {
+    margin: 10px 0;
+}
+
+video, img {
+    max-width: 100%;
+    height: auto;
+}
+
+embed {
+    height: auto; /* Allows PDF to adjust to content */
+    min-height: 600px; /* Minimum height to ensure visibility */
 }

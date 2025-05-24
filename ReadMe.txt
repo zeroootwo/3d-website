@@ -2,4 +2,4 @@
 docker-compose up -d
 -d - запускає контейнери у фоновому режимі.
 Після запуску сайт буде доступний за адресою:
-http://localhost
+https://localhost

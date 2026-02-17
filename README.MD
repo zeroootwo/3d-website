@@ -40,4 +40,7 @@
 This project was developed as part of the curriculum at Sumy State Pedagogical University named after A. S. Makarenko. The main goal is to demonstrate skills in web development and server-side configuration.
 
 ---
-**Author:** [Anastasia (zeroootwo)](https://github.com/zeroootwo)
+## 📫 Contacts / Контакти
+
+[![LinkedIn](https://img.shields.io/badge/LinkedIn-0077B5?style=for-the-badge&logo=linkedin&logoColor=white)](https://www.linkedin.com/in/anastasiia-velyka-2906b4321/) 
+**Author:** Anastasiia (zeroootwo)
